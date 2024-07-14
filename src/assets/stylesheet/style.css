@@ -36,7 +36,14 @@
 /*    text-decoration: none;*/
 /*}*/
 
-/** NavBar section **/
+.full-screen-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3d355; /* Yellow background */
+}
+
 /** NavBar section **/
 .navbar {
     background-color: #f3d355;

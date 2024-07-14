@@ -4,8 +4,8 @@ import Layout from "./components/layout/Layout";
 import Home from "./pages/homePage/Home.tsx";
 import About from "./pages/aboutPage/About.tsx";
 import Contact from "./pages/contactPage/Contact.tsx";
-import Login from "./components/login/Login.tsx";
-import Register from "./components/regsitration/Register.tsx";
+import Login from "./pages/login/Login.tsx";
+import Register from "./pages/regsitration/Register.tsx";
 
 // import HomePage from "./components/page/HomePage";
 // import AddNewProductPage from "./components/page/AddNewProductPage";
@@ -22,9 +22,9 @@ function App() {
                         <Route index element={<Home />} />
                         <Route path={"/about"} element={<About />} />
                         <Route path={"/contact"} element={<Contact />} />
-                        <Route  path="/login" element={<Login />}></Route>
-                        <Route  path="/register" element={<Register />}></Route>
                     </Route>
+                    <Route  path="/login" element={<Login />}></Route>
+                    <Route  path="/register" element={<Register />}></Route>
                 </Routes>
             </div>
         </Router>

@@ -1,21 +1,27 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+// import AppHeader from "./AppHeader.tsx";
+import AppFooter from "./AppFooter.tsx";
+import AppHeader from "./AppHeader.tsx";
 
 const Layout = () => {
     return (
         <>
-            <div className="header">
-                <Header />
+            <div className="wrapper d-flex flex-column min-vh-100">
+                <AppHeader />
+                <div className="body flex-grow-1">
+                    <Outlet/>
+                </div>
+                <AppFooter/>
             </div>
 
-            <div className="app-content">
-                <Outlet />
-            </div>
+            {/*<div className="header">*/}
+            {/*    <AppHeader />*/}
+            {/*</div>*/}
 
-            <div className="footer">
-                <Footer />
-            </div>
+            {/*<div className="app-content">*/}
+            {/*    <Outlet />*/}
+            {/*</div>*/}
+
         </>
     );
 };
