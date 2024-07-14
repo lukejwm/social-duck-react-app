@@ -1,15 +1,18 @@
+import BannerSection from "./BannerSection.tsx";
+import AboutSection from "./AboutSection.tsx";
+import GallerySection from "./GallerySection.tsx";
+import ContactSection from "./ContactSection.tsx";
+import SaveAndPreviewButtons from "../../components/saveAndPreviousButtons/SaveAndPreviousButtons.tsx";
 
 function Home() {
 
     return (
         <>
-            <header>
-                <h1>My Simple React Home Page</h1>
-            </header>
-            <main>
-                <p>Welcome to my simple React home page! This is a basic example of a React project.</p>
-                <img src="https://via.placeholder.com/300" alt="Placeholder"/>
-            </main>
+            <SaveAndPreviewButtons />
+           <BannerSection />
+            <AboutSection />
+            <GallerySection />
+            <ContactSection />
         </>
     )
 }

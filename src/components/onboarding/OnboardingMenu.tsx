@@ -73,7 +73,7 @@ const OnboardingMenu: React.FC = () => {
         // Save formData to local storage or send it to the server
         console.log(formData);
         alert('Onboarding form submitted successfully!');
-        navigate('/onboarding1')
+        navigate('/onboarding/3')
     };
 
     return (
