@@ -36,6 +36,15 @@
 /*    text-decoration: none;*/
 /*}*/
 
+.bg-custom-yellow {
+    background-color: #f3d355 !important;
+}
+
+/* Override specific body tertiary background color */
+.bg-body-tertiary {
+    background-color: #f3d355 !important;
+}
+
 .full-screen-center {
     display: flex;
     justify-content: center;

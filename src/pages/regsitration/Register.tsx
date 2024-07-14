@@ -1,61 +1,103 @@
+import React, { useState } from 'react';
 import {
-    CButton,
+    CContainer,
+    CRow,
+    CCol,
     CCard,
     CCardBody,
-    CCol,
-    CContainer,
     CForm,
-    CFormInput,
     CInputGroup,
     CInputGroupText,
-    CRow,
+    CFormInput,
+    CButton
 } from '@coreui/react';
-import CIcon from '@coreui/icons-react';
-import {cilLockLocked, cilUser} from '@coreui/icons';
+import { cilUser, cilLockLocked } from '@coreui/icons';
+import CIcon from "@coreui/icons-react";
+import {useNavigate} from "react-router-dom";
 
-const Register = () => {
+interface User {
+    username: string;
+    email: string;
+    password: string;
+}
+
+const Register: React.FC = () => {
+    const [users, setUsers] = useState<User[]>([]);
+    const [formData, setFormData] = useState<User>({ username: '', email: '', password: '' });
+    const navigate = useNavigate();
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setUsers([...users, formData]);
+        setFormData({ username: '', email: '', password: '' });
+        alert('User registered successfully!');
+        navigate('/onboarding')
+    };
+
     return (
-        <div className="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center">
+        <div className="bg-custom-yellow min-vh-100 d-flex flex-row align-items-center">
             <CContainer>
                 <CRow className="justify-content-center">
                     <CCol md={9} lg={7} xl={6}>
                         <CCard className="mx-4">
                             <CCardBody className="p-4">
-                                <CForm>
+                                <CForm onSubmit={handleSubmit}>
                                     <h1>Register</h1>
                                     <p className="text-body-secondary">Create your account</p>
                                     <CInputGroup className="mb-3">
                                         <CInputGroupText>
-                                            <CIcon icon={cilUser}/>
+                                            <CIcon icon={cilUser} />
                                         </CInputGroupText>
-                                        <CFormInput placeholder="Username" autoComplete="username"/>
+                                        <CFormInput
+                                            placeholder="Username"
+                                            name="username"
+                                            value={formData.username}
+                                            onChange={handleInputChange}
+                                            autoComplete="username"
+                                        />
                                     </CInputGroup>
                                     <CInputGroup className="mb-3">
                                         <CInputGroupText>@</CInputGroupText>
-                                        <CFormInput placeholder="Email" autoComplete="email"/>
+                                        <CFormInput
+                                            placeholder="Email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            autoComplete="email"
+                                        />
                                     </CInputGroup>
                                     <CInputGroup className="mb-3">
                                         <CInputGroupText>
-                                            <CIcon icon={cilLockLocked}/>
+                                            <CIcon icon={cilLockLocked} />
                                         </CInputGroupText>
                                         <CFormInput
                                             type="password"
                                             placeholder="Password"
+                                            name="password"
+                                            value={formData.password}
+                                            onChange={handleInputChange}
                                             autoComplete="new-password"
                                         />
                                     </CInputGroup>
                                     <CInputGroup className="mb-4">
                                         <CInputGroupText>
-                                            <CIcon icon={cilLockLocked}/>
+                                            <CIcon icon={cilLockLocked} />
                                         </CInputGroupText>
                                         <CFormInput
                                             type="password"
                                             placeholder="Repeat password"
+                                            name="repeatPassword"
+                                            onChange={handleInputChange}
                                             autoComplete="new-password"
                                         />
                                     </CInputGroup>
                                     <div className="d-grid">
-                                        <CButton color="success">Create Account</CButton>
+                                        <CButton type="submit" className="button">Create Account</CButton>
                                     </div>
                                 </CForm>
                             </CCardBody>
@@ -64,8 +106,8 @@ const Register = () => {
                 </CRow>
             </CContainer>
         </div>
-    )
-}
+    );
+};
 
-export default Register
+export default Register;
 
