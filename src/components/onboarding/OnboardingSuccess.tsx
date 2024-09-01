@@ -1,39 +1,13 @@
-import React, {useState} from 'react';
-import {
-    CButton,
-    CCard,
-    CCardBody,
-    CCol,
-    CContainer,
-    CForm,
-    CFormInput,
-    CFormSelect,
-    CInputGroup,
-    CInputGroupText,
-    CRow
-} from '@coreui/react';
+import {CButton, CCard, CCardBody, CCol, CContainer, CForm, CRow} from '@coreui/react';
 import {useNavigate} from "react-router-dom";
 
 const OnboardingSuccess: React.FC = () => {
-    const [formData, setFormData] = useState({
-        businessName: '',
-        businessType: '',
-        otherBusinessType: '',
-        addressLine1: '',
-        addressLine2: '',
-        townCity: '',
-        county: '',
-        postcode: '',
-        telephone: '',
-        logo: ''
-    });
 
     const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Save formData to local storage or send it to the server
-        console.log(formData);
         alert('Onboarding form submitted successfully!');
         navigate('/')
     };

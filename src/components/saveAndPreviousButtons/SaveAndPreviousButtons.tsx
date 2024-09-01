@@ -1,24 +1,28 @@
-import {CButton, CCol, CRow} from '@coreui/react';
+import { CButton, CCol, CRow } from '@coreui/react';
+import { useNavigate } from 'react-router-dom';
 
 const SaveAndPreviewButtons = () => {
+    const navigate = useNavigate(); // Hook for navigation
+
     const saveChanges = () => {
         // Implement save changes logic here
+        console.log('Changes saved!');
     };
 
-    const goToLink = (link: string | URL | undefined) => {
-        window.open(link, '_blank');
+    const goToPreview = () => {
+        // Navigate to the template preview route
+        navigate('/template'); // Adjust this path if needed
     };
 
     return (
         <CRow>
             <CCol xs="2">
-                <CButton color="success" size="lg" onClick={saveChanges}>
+                <CButton color="success" className="mb-3" onClick={saveChanges}>
                     Save Changes
                 </CButton>
             </CCol>
             <CCol xs="2">
-                <CButton color="secondary" className="mb-3"
-                         onClick={() => goToLink('https://app.site123.com/manager/wizard.php?wu=666f0649eab1e-666f0649eab1f-666f0649eab20&from=dash')}>
+                <CButton color="secondary" className="mb-3" onClick={goToPreview}>
                     Preview Changes
                 </CButton>
             </CCol>
