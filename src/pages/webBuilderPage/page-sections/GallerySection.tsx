@@ -37,7 +37,7 @@ const GallerySection: React.FC = () => {
     return (
         <CCard className="mb-4">
             <CCardHeader>
-                Gallery Section
+                <h1 className="card-title">Gallery Section</h1>
             </CCardHeader>
             <CCardBody>
                 <CForm>

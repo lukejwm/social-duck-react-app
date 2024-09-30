@@ -9,7 +9,7 @@ const MenuAndPriceListSection = () => {
     return (
         <CCard className="mb-4">
             <CCardHeader>
-                Menu and Price List Section
+                <h1 className="card-title">Menu &amp; Price List Section</h1>
             </CCardHeader>
             <CCardBody>
                 {/*<PriceList /> /!* Replace with actual PriceList component *!/*/}

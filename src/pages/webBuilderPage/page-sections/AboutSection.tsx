@@ -39,7 +39,7 @@ const AboutSection: React.FC = () => {
     return (
         <CCard className="mb-4">
             <CCardHeader>
-                About Section
+                <h1 className="card-title">About Section</h1>
             </CCardHeader>
             <CCardBody>
                 <CForm>

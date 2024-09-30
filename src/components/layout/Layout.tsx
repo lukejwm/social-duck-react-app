@@ -13,15 +13,6 @@ const Layout = () => {
                 </div>
                 <AppFooter/>
             </div>
-
-            {/*<div className="header">*/}
-            {/*    <AppHeader />*/}
-            {/*</div>*/}
-
-            {/*<div className="app-content">*/}
-            {/*    <Outlet />*/}
-            {/*</div>*/}
-
         </>
     );
 };

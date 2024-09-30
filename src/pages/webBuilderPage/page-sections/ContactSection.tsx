@@ -46,7 +46,7 @@ const ContactSection: React.FC = () => {
     return (
         <CCard className="mb-4">
             <CCardHeader>
-                Contact Section
+                <h1 className="card-title">Contact Section</h1>
             </CCardHeader>
             <CCardBody>
                 <CForm>

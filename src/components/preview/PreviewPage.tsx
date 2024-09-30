@@ -7,7 +7,6 @@ import '../../webtemplate/css/style.css'; // Assuming you have a CSS file for cu
 const PreviewPage: React.FC = () => {
     const location = useLocation();
     const {
-        nameOfPremises,
         logoPreview,
         heroImage,
         aboutImage,

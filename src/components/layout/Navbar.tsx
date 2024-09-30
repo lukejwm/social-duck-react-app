@@ -1,5 +1,6 @@
 import React from "react";
-import {Button, ButtonGroup, Navbar} from "react-bootstrap";
+// TODO: ensure that react-bootstrap elements are removed in favour of CoreUI
+import {Button, Navbar} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import '../../assets/stylesheet/style.css'
 import {CContainer, CHeaderNav, CNavItem} from "@coreui/react";
@@ -22,38 +23,31 @@ const NavBar: React.FC<NavBarProps> = ({imgSrc}: NavBarProps) => {
                     </Navbar.Brand>
 
                     <CHeaderNav className="nav">
-                        <div className="nav__menu" id="nav-menu">
-                            <div className="nav__list">
-                                <CNavItem className="nav__item">
-                                    <NavLink to="/" className="nav__link">Home</NavLink>
+                        <div className="nav-menu" id="nav-menu">
+                            <div className="nav-list">
+                                <CNavItem className="nav-item">
+                                    <NavLink to="/" className="nav-link">Home</NavLink>
                                 </CNavItem>
-                                <CNavItem className="nav__item">
-                                    <NavLink to="/about" className="nav__link">About</NavLink>
+                                <CNavItem className="nav-item">
+                                    <NavLink to="/web-builder" className="nav-link">Web Builder</NavLink>
                                 </CNavItem>
-                                <CNavItem className="nav__item">
-                                    <NavLink to="/contact" className="nav__link">Contact</NavLink>
+                                <CNavItem className="nav-item">
+                                    <NavLink to="/social-media" className="nav-link">Social Media</NavLink>
+                                </CNavItem>
+                                <CNavItem className="nav-item">
+                                    <NavLink to="/waitlist" className="nav-link">Waitlist</NavLink>
                                 </CNavItem>
                                 <br/>
                             </div>
 
-                            <ButtonGroup>
-                                <Button className="button" style={{marginRight: "10px"}}>
-                                    <NavLink
-                                        to="/login"
-                                        style={{color: "inherit", textDecoration: "none"}}
-                                    >
-                                        Login
-                                    </NavLink>
-                                </Button>
-                                <Button className="button" style={{marginRight: "10px"}}>
-                                    <NavLink
-                                        to="/register"
-                                        style={{color: "inherit", textDecoration: "none"}}
-                                    >
-                                        Register
-                                    </NavLink>
-                                </Button>
-                            </ButtonGroup>
+                            <Button className="button" style={{marginRight: "10px"}}>
+                                <NavLink
+                                    to="/login"
+                                    style={{color: "inherit", textDecoration: "none"}}
+                                >
+                                    Sign Out
+                                </NavLink>
+                            </Button>
                         </div>
                     </CHeaderNav>
                 </CContainer>
