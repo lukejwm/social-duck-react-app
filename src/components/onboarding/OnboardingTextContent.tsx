@@ -22,9 +22,9 @@ const OnboardingTextContent: React.FC = () => {
 
     const navigate = useNavigate();
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const {name, value} = e.target;
-        setFormData({...formData, [name]: value});
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
     const handlePreviousClick = () => {
@@ -90,14 +90,13 @@ const OnboardingTextContent: React.FC = () => {
 
                                     <CInputGroup className="mb-3">
                                         <CFormTextarea
-                                            placeholder="About Us (max 1000 characters)"
-                                            component="textarea"
-                                            id="aboutUs"
-                                            name="aboutUs"
-                                            value={formData.aboutUs}
+                                            placeholder="Introduction (max 250 characters)"
+                                            id="introduction"
+                                            name="introduction"
+                                            value={formData.introduction}
                                             onChange={handleInputChange}
-                                            maxLength={1000}
-                                            rows={6}
+                                            maxLength={250}
+                                            rows={4}
                                             required
                                         />
                                     </CInputGroup>

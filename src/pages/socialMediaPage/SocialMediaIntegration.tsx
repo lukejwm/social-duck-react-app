@@ -1,53 +1,84 @@
-import { useState } from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap'; // Ensure you're using a UI library like React Bootstrap
+// import {useState} from 'react';
+import {CButton, CCard, CCardBody, CCardHeader, CCol, CContainer, CFormCheck, CRow} from '@coreui/react';
 
 const SocialMediaIntegration: React.FC = () => {
-    const [postContent, setPostContent] = useState('');
-
-    const handlePostChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setPostContent(event.target.value);
-    };
-
-    const handlePostSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        // Handle the post submission logic here
-        console.log('Post submitted:', postContent);
-        setPostContent('');
-    };
-
     return (
-        <Container>
-            <Row className="justify-content-center">
-                <Col md={8}>
-                    <h2>Social Media Integration</h2>
-                    <Form onSubmit={handlePostSubmit}>
-                        <Form.Group controlId="postContent">
-                            <Form.Label>Create a Post</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={3}
-                                value={postContent}
-                                onChange={handlePostChange}
-                                placeholder="What's on your mind?"
-                            />
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Post
-                        </Button>
-                    </Form>
-                    <div className="mt-4">
-                        <h4>Connected Accounts</h4>
-                        {/* List connected social media accounts here */}
-                        <ul>
-                            <li>Facebook</li>
-                            <li>Twitter</li>
-                            <li>Instagram</li>
-                            {/* Add more as needed */}
-                        </ul>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+        <CContainer>
+            <CCard className="mb-4">
+                <CCardHeader>
+                    <h1 className="card-title">Upload to Social Media</h1>
+                </CCardHeader>
+                <CCardBody>
+                    {/* Social Media Platforms Section */}
+                    <CRow className="d-flex justify-content-center align-items-center mb-4">
+                        <CCol md="4" className="text-center">
+                            <h4>Social Media Platforms</h4>
+                        </CCol>
+                        <CCol md="8">
+                            <CRow className="d-flex justify-content-center">
+                                <CCol md="6" className="text-center">
+                                    <CFormCheck id="facebook" label="Facebook" />
+                                    <CFormCheck id="instagram" label="Instagram" />
+                                    <CFormCheck id="twitter" label="Twitter" />
+                                </CCol>
+                            </CRow>
+                        </CCol>
+                    </CRow>
+
+                    {/* Post Text Section */}
+                    <CRow className="d-flex justify-content-center align-items-center mb-4">
+                        <CCol md="4" className="text-center">
+                            <h4>Post Text</h4>
+                        </CCol>
+                        <CCol md="8">
+                            <textarea className="form-control" rows={3} placeholder="Enter post text here"></textarea>
+                        </CCol>
+                    </CRow>
+
+                    {/* Post Image Section */}
+                    <CRow className="d-flex justify-content-center align-items-center mb-4">
+                        <CCol md="4" className="text-center">
+                            <h4>Post Image</h4>
+                        </CCol>
+                        <CCol md="8">
+                            <input type="file" className="form-control" />
+                        </CCol>
+                    </CRow>
+
+                    {/* Link Section */}
+                    <CRow className="d-flex justify-content-center align-items-center mb-4">
+                        <CCol md="4" className="text-center">
+                            <h4>Link</h4>
+                        </CCol>
+                        <CCol md="8">
+                            <input type="url" className="form-control" placeholder="Enter link URL" />
+                        </CCol>
+                    </CRow>
+
+                    {/* Hashtags Section */}
+                    <CRow className="d-flex justify-content-center align-items-center mb-4">
+                        <CCol md="4" className="text-center">
+                            <h4>Hashtags</h4>
+                        </CCol>
+                        <CCol md="8">
+                            <input type="text" className="form-control" placeholder="Enter hashtags" />
+                        </CCol>
+                    </CRow>
+
+                    {/* Submit Button */}
+                    <CRow className="d-flex justify-content-center align-items-center">
+                        <CButton
+                            color="success"
+                            active={true}
+                            disabled={false}
+                            style={{ padding: '10px 20px' }}
+                        >
+                            Submit
+                        </CButton>
+                    </CRow>
+                </CCardBody>
+            </CCard>
+        </CContainer>
     );
 };
 
